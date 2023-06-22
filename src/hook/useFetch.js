@@ -43,6 +43,8 @@ const useFetch = (endpoint, query) => {
     }
   };*/
 
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getData = async () => {
     setIsLoading(true);
     try {
@@ -61,6 +63,7 @@ const useFetch = (endpoint, query) => {
 
   useEffect(() => {
     getData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   const refetch = () => {
