@@ -1,13 +1,14 @@
 import React from 'react'
 import Products from '../components/Products/Products'
-import Header from '../components/Header/Header'
+import SideNavbar from '../components/Header/SideNavbar'
+//import SideNavbar from '../components/Header/SideNavbar'
 
 const HomePage = () => {
   return (
-    <>
-    <Header/>
+    <div className='flex flex-row'>
+    <SideNavbar/>
     <Products/>
-    </>
+    </div>
   )
 }
 

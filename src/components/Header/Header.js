@@ -2,8 +2,8 @@ import React from 'react'
 import Navbar from './Navbar'
 import CarouselFadeExample from './Banner'
 
-const text = ["#92c952", "#771796"];
-const colors = ['(to right, #8E24AA, #1E88E5)', '(to right, purple, red)']
+const text = ["Fashion is an art form" , "Invest in timeless pieces","Fashion rules are meant to be broken","Black is always in style" ];
+const colors = ['(to right, #8E24AA, #1E88E5)', '(to right, purple, red)','(to right,#aa076b,#61045f)']
 const Header = () => {
   const [value, setValue] = React.useState(0);
 
@@ -12,15 +12,19 @@ const Header = () => {
       setValue((v) => {
         return v === 4 ? 0 : v + 1;
       });
-    }, 2000);
+    }, 2700);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div style={{background:`linear-gradient${colors[value]}`}}>
-    <Navbar/>
+    <>
+     <Navbar/>
+   
+    <div style={{background:`linear-gradient${colors[value]}`, marginLeft:'24px', marginRight:'24px'}}>
+   
     <CarouselFadeExample text={text[value]}/>
     </div>
+    </>
   )
 }
 

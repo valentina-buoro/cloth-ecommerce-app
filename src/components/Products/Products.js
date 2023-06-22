@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Card from "./Card";
-import axios from "axios";
 import Example from "./ProductDetailsModal";
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
+import useFetch from "../../hook/useFetch";
+import Header from "../Header/Header";
 
 const Products = () => {
+  const { data, isLoading, error } = useFetch(
+    'products'
+  )
+
   const [modal, setModal] = useState(false);
   const handleShowMessage = () => {
     setModal(!modal);
@@ -13,8 +18,7 @@ const Products = () => {
   const closeModal = () => {
     setModal(!modal);
   };
-
-  const [data, setData] = useState([]);
+  /*const [data, setData] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
@@ -47,27 +51,33 @@ const Products = () => {
     setButtonText(newTextColor);
   };
   const [buttonColor, setButtonColor] = useState('');
-  const [buttonText, setButtonText]=useState('')
- 
-
+  const [buttonText, setButtonText]=useState('')*/
   return (
-    <div>
-      <div className="flex gap-5 px-5 mt-4">
+    <div className=" w-[80%] flex flex-1 flex-col min-h-screen">
+     {/* <div className="flex gap-5 px-5 mt-4">
         <button  style={{ backgroundColor: buttonColor, color:buttonText }} onClick={() => handleFilter("all")} value='all' className={`px-4 py-2 rounded-3xl border border-black active:bg-black`}>All</button>
         <button onClick={() => handleFilter("women's clothing")}  value="women's clothing" className="px-4 py-2 rounded-3xl border border-black">Women's clothing</button>
         <button onClick={() => handleFilter("men's clothing")} value="men's clothing" className="px-4 py-2 rounded-3xl border border-black">Men's clothing</button>
         <button onClick={() => handleFilter("jewelery")} value='jewelry' className="px-4 py-2 rounded-3xl border border-black">Jewelry</button>
         <button onClick={() => handleFilter("electronics")} value='electronics 'className="px-4 py-2 rounded-3xl border border-black">Electronics</button>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-12 p-6 md:p-12">
-        { filteredData.map((e) => {
-          return (
-            <Card item={e} key={e.id} onClick={handleShowMessage}>
+  </div>*/}
+<Header/>
+      <div class=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-12 p-6 md:p-12">
+      
+        {isLoading ? (
+          <div> fetching your items !</div>
+        ): error ? (
+          <div>something went wrong </div>
+        ) : (
+          data.map((e)=>{
+            return(
+              <Card item={e} key={e.id} onClick={handleShowMessage}>
               <Example item={e} key={e.id} onclick={closeModal} />
             </Card>
-          );
-        })}
+            )
+          })
+        )}
+
       </div>
     </div>
   );
