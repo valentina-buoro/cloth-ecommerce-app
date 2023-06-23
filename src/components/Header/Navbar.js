@@ -7,7 +7,7 @@ const Navbar = () => {
     
 
         <div className='self-center'>
-            <h1>Oren</h1>
+            <h1>Zoren</h1>
         </div>
         <div>
             
