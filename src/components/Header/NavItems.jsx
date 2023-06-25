@@ -1,13 +1,15 @@
 import React from 'react'
 import './NavItems.css'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavItems = ({Icon, title, route}) => {
   return (
-    <NavLink to={route} className='nav' >
+    <div className='nav' >
+        <Link to={route} className='text-white no-underline flex flex-col md:flex-row'>
         {Icon && <Icon className='icon'/>}
         <h2>{title ? title : null}</h2>
-    </NavLink>
+        </Link>
+    </div>
   )
 }
 

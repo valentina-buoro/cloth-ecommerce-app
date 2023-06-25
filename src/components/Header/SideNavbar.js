@@ -9,7 +9,7 @@ import { FiChevronLeft } from 'react-icons/fi'
 const SideNavbar = () => {
   const [ nav, setNav] = useState(true)
   return (
-    <div className={`navigation ${nav && 'active' }`}>
+    <div className={`navigation ${nav && 'active' } w-[25%] md:w-[18%]`}>
       <div className={`menu ${nav && 'active'}`} onClick={()=>{
         setNav((prevState)=>!prevState)
       }}>
