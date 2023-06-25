@@ -1,12 +1,13 @@
 import React from 'react'
 import './NavItems.css'
+import { NavLink } from 'react-router-dom'
 
-const NavItems = ({Icon, title}) => {
+const NavItems = ({Icon, title, route}) => {
   return (
-    <div className='nav' >
+    <NavLink to={route} className='nav' >
         {Icon && <Icon className='icon'/>}
         <h2>{title ? title : null}</h2>
-    </div>
+    </NavLink>
   )
 }
 

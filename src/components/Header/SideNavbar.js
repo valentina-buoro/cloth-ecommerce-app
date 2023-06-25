@@ -22,7 +22,7 @@ const SideNavbar = () => {
             <span>Welcome Tina!</span>
         </header>
         <div className='divider'></div>
-        <NavItems title='Home' Icon={GoHomeFill}/>
+        <NavItems to='/' title='Home' Icon={GoHomeFill}/>
         <NavItems title='Messages' Icon={TbMessageCircle2Filled}/>
         <NavItems title='Messages' Icon={ IoNotifications }/>
     </div>
