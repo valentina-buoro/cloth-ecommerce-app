@@ -24,7 +24,7 @@ const SideNavbar = () => {
         <div className='divider'></div>
         <NavItems to='/' title='Home' Icon={GoHomeFill}/>
         <NavItems title='Messages' Icon={TbMessageCircle2Filled}/>
-        <NavItems title='Messages' Icon={ IoNotifications }/>
+        <NavItems title='Notifications' Icon={ IoNotifications }/>
     </div>
   )
 }
