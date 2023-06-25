@@ -13,9 +13,9 @@ const Card = (props) => {
   }
 
   return (
-    <div class="flex flex-col justify-between bg-white p-3 rounded-md shadow-md">
-      <div className="w-11/12 h-2/3 self-center">
-        <img className="w-auto h-full" src={props.item.image} alt="pic" />
+    <div class="flex flex-col justify-between bg-white p-3 rounded-md shadow-md ">
+      <div className=" h-2/3 self-center">
+        <img className="w-auto h-full object-scale-down " src={props.item.image} alt="pic" />
       </div>
      <div className="py-2 md:py-4">
      <div className="flex flex-col md:flex-row md:justify-between">

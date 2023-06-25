@@ -7,7 +7,7 @@ import { IoNotifications } from 'react-icons/io5'
 import { FiChevronLeft } from 'react-icons/fi'
 
 const SideNavbar = () => {
-  const [ nav, setNav] = useState(false)
+  const [ nav, setNav] = useState(true)
   return (
     <div className={`navigation ${nav && 'active' }`}>
       <div className={`menu ${nav && 'active'}`} onClick={()=>{
