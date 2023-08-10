@@ -20,11 +20,11 @@ const Card = (props) => {
      <div className="py-2 md:py-4">
      <div className="flex flex-col md:flex-row md:justify-between">
       <div className="">
-      <p className="font-semibold text-lg pb-2">N {props.item.price}</p>
+      <p className="font-semibold align-middle text-lg pb-1 md:pb-2">N {props.item.price}</p>
       </div>
         <div><button className="px-3 py-2 bg-[#07775D] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]">Add to cart</button></div>
       </div>
-      <div className="text-normal text-sm text-gray-500 pt-4 " onClick={handleShowMessage}>
+      <div className="text-normal text-sm text-gray-500 pt-2 md:pt-4 " onClick={handleShowMessage}>
         <NavLink className='text-gray-500'>Product Details</NavLink>
       </div>
      </div>

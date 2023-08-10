@@ -2,7 +2,10 @@ import React from 'react'
 
 const CheckoutPage = () => {
   return (
-    <div>CheckoutPage</div>
+    <div>
+      <div>Checkout page</div>
+      
+    </div>
   )
 }
 

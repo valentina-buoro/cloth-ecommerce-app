@@ -4,6 +4,7 @@ import Example from "./ProductDetailsModal";
 //import { NavLink } from "react-router-dom";
 import useFetch from "../../hook/useFetch";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Products = () => {
   const { data, isLoading, error } = useFetch(
@@ -62,7 +63,7 @@ const Products = () => {
         <button onClick={() => handleFilter("electronics")} value='electronics 'className="px-4 py-2 rounded-3xl border border-black">Electronics</button>
   </div>*/}
 <Header/>
-      <div class=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-12 p-6 md:p-12">
+      <div class=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-12 p-6 md:p-12">
       
         {isLoading ? (
           <div> fetching your items !</div>
@@ -79,6 +80,7 @@ const Products = () => {
         )}
 
       </div>
+      <Footer/>
     </div>
   );
 };
