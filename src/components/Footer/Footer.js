@@ -1,11 +1,23 @@
 import React from 'react'
-import { FaTwitter, FaLinkedin,FaGithub } from 'react-icons/fa'
+import { FaTwitter, FaLinkedin,FaGithub, FaWhatsapp } from 'react-icons/fa'
 
 const Footer = () => {
   return (
     <div className='bg-gray-900 text-white flex flex-col md:flex-row items-center p-6 md:p-12 justify-around'> 
         <div>
-            Address
+           <p>
+            Created by Valentina Buoro
+           </p>
+            <div>
+              <div>
+              <a href='https://linkedin.com/in/valentina-buoro'><FaWhatsapp size={30} style={{color:'#fff'}} /></a>
+              </div>
+              <div>
+                <span>
+                  talk on whatsapp
+                </span>
+              </div>
+            </div>
         </div>
         <div>
             social media links
