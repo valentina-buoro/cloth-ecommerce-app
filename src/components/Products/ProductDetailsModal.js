@@ -13,7 +13,7 @@ function Example(props) {
 
   return (
     <>
-      <Modal className="bg-red-500" show={props.show} onHide={props.closeModal}>
+      <Modal show={props.show} onHide={props.closeModal}>
         <Modal.Header closeButton>
           <Modal.Title>{props.title}</Modal.Title>
         </Modal.Header>
@@ -22,10 +22,10 @@ function Example(props) {
             <div className="w-[40%]">
               <img src={props.image} alt="product" />
             </div>
-            <div className="w-[40%]">
-              <div>{props.price}</div>
-              <div>
-                <div className="flex justify-around ">
+            <div className="w-[40%] flex flex-col justify-between">
+              <div className="text-2xl mt-5">${count === 0? props.price : props.price * count}</div>
+              <div className="flex flex-col justify-between gap-4">
+                <div className="flex justify-between ">
                   <span className="text-xl">
                     <button
                       className="px-3 py-2 bg-red-500 text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]"
