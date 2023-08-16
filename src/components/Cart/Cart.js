@@ -30,25 +30,23 @@ const Cart = () => {
           Cart ({totalUniqueItems}) total items: ({totalItems})
         </h5>
         <div className=" ">
-          <div className="">
+          <div className="p:4 md:p-16">
             {items.map((item) => {
               return (
-                <div
-                  key={item.id}
-                  className=" bg-violet-100 "
-                >
+                <div key={item.id} className=" bg-violet-100 flex m-4 justify-between p-4 md:p-5">
                   <div>
-                    <div className="">
+                    <div className=" h-[100px] md:h-[150px] self-center">
                       <img
+                        className="w-auto h-full object-contain "
                         src={item.image}
-                        alt="carts"
+                        alt="pic"
                       />
                     </div>
-                    <h3>{item.title}</h3>
+                    <h6>{item.title}</h6>
                   </div>
                   <div>
-                    <h3>{item.price * item.quantity}</h3>
-                    <h3>Quantity({item.quantity})</h3>
+                    <h5>{item.price * item.quantity}</h5>
+                    <h5>Quantity({item.quantity})</h5>
                     <div className="">
                       <button
                         className="py-0.75 px-3 bg-transparent hover:bg-black hover:text-white border border-black rounded m-3 "
@@ -84,7 +82,7 @@ const Cart = () => {
         <h2>Total : $ {cartTotal}</h2>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <button className=" bg-lime-500 py-4 px-2 m-8 rounded text-xl font-mono font-bold w-3/4">
+        <button className="px-3 py-2 bg-[#07775D] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem] w-1/4">
           Buy Now
         </button>
         <button
