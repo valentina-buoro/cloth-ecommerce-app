@@ -23,8 +23,8 @@ const Cart = () => {
       </div>
     );
   return (
-    <>
-      <div className="">
+    <div className="bg-neutral-100">
+      <div className="bg-neutral-100">
         <h5>
           {" "}
           Cart ({totalUniqueItems}) total items: ({totalItems})
@@ -33,16 +33,17 @@ const Cart = () => {
           <div className="p:4 md:p-16">
             {items.map((item) => {
               return (
-                <div key={item.id} className=" bg-violet-100 flex m-4 justify-between p-4 md:p-5">
+                <div key={item.id} className=" bg-white border flex m-4 justify-between p-4 md:p-5">
                   <div>
-                    <div className=" h-[100px] md:h-[150px] self-center">
+                    <div className=" h-[90px] md:h-[150px] flex flex-col md:flex-row gap-2 items-start">
                       <img
                         className="w-auto h-full object-contain "
                         src={item.image}
                         alt="pic"
                       />
+                      <h6>{item.title} </h6>
                     </div>
-                    <h6>{item.title}</h6>
+                    
                   </div>
                   <div>
                     <h5>{item.price * item.quantity}</h5>
@@ -92,7 +93,7 @@ const Cart = () => {
           Clear cart
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
