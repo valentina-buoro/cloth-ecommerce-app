@@ -66,7 +66,7 @@ const Cart = () => {
                         +
                       </button>
                       <button
-                        className="py-0.75 px-3 bg-red-600 hover:bg-red-500 hover:text-white rounded text-stone-800 mx-6 "
+                        className="py-0.75 px-3 bg-red-500 hover:bg-red-500 hover:text-white rounded text-stone-800 mx-6 "
                         onClick={() => removeItem(item.id)}
                       >
                         Remove
