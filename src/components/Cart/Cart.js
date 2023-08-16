@@ -35,13 +35,13 @@ const Cart = () => {
               return (
                 <div key={item.id} className=" bg-white border flex m-4 justify-between p-4 md:p-5">
                   <div>
-                    <div className=" h-[90px] md:h-[150px] flex flex-col md:flex-row gap-2 items-start">
+                    <div className=" h-[120px] md:h-[170px] flex flex-col md:flex-row gap-2 items-start ">
                       <img
-                        className="w-auto h-full object-contain "
+                        className="w-auto h-[75%] md:h-[95%] object-contain "
                         src={item.image}
                         alt="pic"
                       />
-                      <h6>{item.title} </h6>
+                      <h6 className="mb-4">{item.title} </h6>
                     </div>
                     
                   </div>
