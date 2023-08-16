@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card";
 import Example from "./ProductDetailsModal";
 //import { NavLink } from "react-router-dom";
