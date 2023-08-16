@@ -1,6 +1,7 @@
 import { useState } from "react";
 //import Button from 'react-bootstrap/Button';
 import Modal from "react-bootstrap/Modal";
+import { useCart } from 'react-use-cart'
 
 function Example(props) {
   const [count, setCount] = useState(0);
@@ -10,6 +11,8 @@ function Example(props) {
   const subtract = () => {
     setCount((prevCount) => prevCount - 1);
   };
+
+  const {addItem } = useCart()
 
   return (
     <>
@@ -47,7 +50,7 @@ function Example(props) {
                     </button>
                   </span>
                 </div>
-                <button className="px-3 py-2 bg-[#07775D] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]">
+                <button onClick={()=>addItem(props.item)}  className="px-3 py-2 bg-[#07775D] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]">
                   {" "}
                   Add to cart
                 </button>

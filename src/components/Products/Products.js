@@ -11,14 +11,7 @@ const Products = () => {
     'products'
   )
 
-  const [modal, setModal] = useState(false);
-  const handleShowMessage = () => {
-    setModal(!modal);
-  };
-
-  const closeModal = () => {
-    setModal(!modal);
-  };
+  
   /*const [data, setData] = useState([]);
   useEffect(() => {
     const getData = async () => {
@@ -72,8 +65,8 @@ const Products = () => {
         ) : (
           data.map((e)=>{
             return(
-              <Card item={e} key={e.id} onClick={handleShowMessage}>
-              <Example item={e} key={e.id} onclick={closeModal} />
+              <Card item={e} key={e.id} >
+              <Example item={e} key={e.id} />
             </Card>
             )
           })

@@ -2,6 +2,8 @@ import React from "react";
 //import { BsCartPlus } from "react-icons/bs";
 import { NavLink } from 'react-router-dom'
 import Example from "./ProductDetailsModal";
+import { useCart } from 'react-use-cart';
+
 const Card = (props) => {
   const [modal, setModal] = React.useState(false)
   const handleShowMessage = ()=>{
@@ -11,6 +13,9 @@ const Card = (props) => {
   const closeModal = ()=>{
     setModal(!modal)
   }
+
+  const {addItem } = useCart()
+
 
   return (
     <div class="flex flex-col justify-between bg-white p-3 rounded-md shadow-md ">
@@ -22,7 +27,7 @@ const Card = (props) => {
       <div className="">
       <p className="font-semibold align-middle text-lg pb-1 md:pb-2">N {props.item.price}</p>
       </div>
-        <div><button className="px-3 py-2 bg-[#07775D] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]">Add to cart</button></div>
+        <div><button onClick={()=>addItem(props.item)} className="px-3 py-2 bg-[#07775D] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]">Add to cart</button></div>
       </div>
       <div className="text-normal text-sm text-gray-500 pt-2 md:pt-4 " onClick={handleShowMessage}>
         <NavLink className='text-gray-500'>Product Details</NavLink>
@@ -33,6 +38,7 @@ const Card = (props) => {
       price={props.item.price}
       title={props.item.title}
       description={props.item.description}
+      item={props.item}
       show={modal}
             closeModal={closeModal}
             />): null}
