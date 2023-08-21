@@ -42,12 +42,13 @@ const Login = () => {
   };
 
   const container =
-    'relative flex flex-col justify-center items-center m-auto bg-red-300 w-[400px] aspect-[1] rounded-[10px] py-[60px] px-[80px] before:absolute before:content-[""] before:h-[calc(100%-3px)] before:w-[calc(100%-3px)] before:bg-black before:rounded-[9px] ';
+    'relative flex flex-col justify-center items-center m-auto  bg-red-300 w-[400px] aspect-[1] rounded-[10px] py-[60px] px-[80px] before:absolute before:content-[""] before:h-[calc(100%-3px)] before:w-[calc(100%-3px)] before:bg-black before:rounded-[9px] ';
   const inputStyle =
     "w-full  bg-transparent pt-[20px] pb-[10px] px-[3px] border-b-2 border-b-[#810551] text-white focus:outline-none peer";
   const labelStyle =
     "absolute  text-[13px] top-[18px] left-[3px] text-white transition ease duration-200 peer-focus:top-0  peer-focus:text-red-500 peer-valid:top-0  ";
   return (
+    <div className="bg-black h-screen pt-5">
     <div className={`${container}`}>
       <header className="absolute top-2.5 flex items-center">
         <span className="text-base text-white ">
@@ -150,6 +151,7 @@ const Login = () => {
           </span>
         )}
       </form>
+    </div>
     </div>
   );
 };
