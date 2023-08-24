@@ -1,22 +1,13 @@
 import Alert from 'react-bootstrap/Alert';
 
-function InfoAlert() {
+function InfoAlert(props) {
   return (
     <>
-      {[
-        'primary',
-        'secondary',
-        'success',
-        'danger',
-        'warning',
-        'info',
-        'light',
-        'dark',
-      ].map((variant) => (
-        <Alert key={variant} variant={variant}>
-          This is a {variant} alert—check it out!
+      
+        <Alert key={props.variant} variant={props.variant}>
+          This is a alert—check it out!
         </Alert>
-      ))}
+   
     </>
   );
 }

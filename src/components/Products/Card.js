@@ -7,7 +7,7 @@ import InfoAlert from "../Alert";
 
 const Card = (props) => {
   const [modal, setModal] = React.useState(false)
-  const [alert, setAlert] = React.useState(false)
+  const [alert, setAlert] = React.useState(true)
   const handleShowMessage = ()=>{
     setModal(!modal)
   }
@@ -53,7 +53,7 @@ const Card = (props) => {
             closeModal={closeModal}
             />): null}
 
-            {alert? (<InfoAlert/>):''}
+            {alert? (<InfoAlert key={'success'} variant={'success'}/>):''}
     </div>
   );
 };
