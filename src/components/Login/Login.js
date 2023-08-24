@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoWarningOutline } from "react-icons/io5";
 import { auth } from "../../Firebase";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
  const [email, setEmail] = useState('')
