@@ -7,7 +7,7 @@ import InfoAlert from "../Alert";
 
 const Card = (props) => {
   const [modal, setModal] = React.useState(false)
-  const [alert, setAlert] = React.useState(true)
+  const [alert, setAlert] = React.useState(false)
   const handleShowMessage = ()=>{
     setModal(!modal)
   }
@@ -19,10 +19,11 @@ const Card = (props) => {
   const {addItem } = useCart()
   const AddItem= ()=>{
     addItem(props.item)
-    if(addItem){
-      setAlert(true)
-    }
-    setAlert(false)
+    setAlert(!alert)
+  }
+
+  const closeAlert = ()=>{
+    setAlert(!alert)
   }
 
 
@@ -53,7 +54,7 @@ const Card = (props) => {
             closeModal={closeModal}
             />): null}
 
-            {alert? (<InfoAlert key={'success'} variant={'success'}/>):''}
+            {alert? (<InfoAlert closeAlert={closeAlert} show={alert} item={props.item} variant={'success'}/>):''}
     </div>
   );
 };
