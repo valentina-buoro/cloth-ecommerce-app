@@ -4,25 +4,23 @@ import { auth } from "../../Firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+ const [email, setEmail] = useState('')
+ const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
   const [NewUser, setNewUser] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
-  const handleChange = (event) => {
+  /*const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
     console.log(formData);
-  };
+  };*/
   const submit = (e) => {
     e.preventDefault(); //prevents the browswer from refreshing
     setError(false);
 
     if (NewUser) { 
-      createUserWithEmailAndPassword(auth,  ...formData )
+      createUserWithEmailAndPassword(auth, email, password)
       .then(()=>{
         localStorage.setItem('username', username)
       }).catch((error)=>{
@@ -32,7 +30,7 @@ const Login = () => {
 
       });
     } else {
-      signInWithEmailAndPassword(auth, ...formData)
+      signInWithEmailAndPassword(auth, email, password)
       .catch((error)=>{
         setError(true)
         const errorMessage = error.message;
@@ -78,7 +76,7 @@ const Login = () => {
         <div className="relative">
           <input
             className={`${inputStyle}`}
-            onChange={handleChange}
+            onChange={(e)=>setEmail(e.target.value)}
             name="email"
             type="text"
             id="email"
@@ -92,7 +90,7 @@ const Login = () => {
         <div className="relative">
           <input
             className={`${inputStyle}`}
-            onChange={handleChange}
+            onChange={(e)=>setPassword(e.target.value)}
             name="password"
             type="text"
             id="password"
