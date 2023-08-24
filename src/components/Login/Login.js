@@ -4,7 +4,7 @@ import { auth } from "../../Firebase";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
-const Login = () => {
+const Login = (props) => {
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
@@ -28,9 +28,15 @@ const Login = () => {
 
       });
     } else {
-      signInWithEmailAndPassword(auth, email, password).then(
-     navigate('/')
-      )
+      signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        // Signed in 
+        if(userCredential.user){
+          navigate('/')
+        }
+        const user = userCredential.user;
+        console.log(user)
+        // ...
+      })
       .catch((error)=>{
         setError(true)
         const errorMessage = error.message;
