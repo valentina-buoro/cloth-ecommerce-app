@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { IoWarningOutline } from "react-icons/io5";
 import { auth } from "../../Firebase";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
  const [email, setEmail] = useState('')
@@ -10,11 +11,8 @@ const Login = () => {
   const [NewUser, setNewUser] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
-  /*const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-    console.log(formData);
-  };*/
+  
+  const navigate = useNavigate()
   const submit = (e) => {
     e.preventDefault(); //prevents the browswer from refreshing
     setError(false);
@@ -30,7 +28,9 @@ const Login = () => {
 
       });
     } else {
-      signInWithEmailAndPassword(auth, email, password)
+      signInWithEmailAndPassword(auth, email, password).then(
+     navigate('/')
+      )
       .catch((error)=>{
         setError(true)
         const errorMessage = error.message;
