@@ -57,30 +57,25 @@ const Products = () => {
 
       <Header />
       <div className="px-6 md:px-12 py-4 md:py-8 flex items-center justify-center">
-          <input
-           type="search"
-           className="border-2 border-black rounded-3xl p-2 w-full md:w-1/2"
-           placeholder="Search for products"
-           onChange= {
-            (e) => {
-              const filteredData = data.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()));
-              setFilteredData(filteredData);
-              
-            }
-           }
-           />
-        </div>
+        <input
+          type="search"
+          className="border outline-none rounded-3xl p-3 w-full md:w-1/2"
+          placeholder="Search for products"
+          onChange={(e) => {
+            const filteredData = data.filter((item) =>
+              item.title.toLowerCase().includes(e.target.value.toLowerCase())
+            );
+            setFilteredData(filteredData);
+          }}
+        />
+      </div>
       <div class=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-12 p-6 md:p-12">
-       
         {isLoading ? (
           <div> fetching your items !</div>
         ) : error ? (
           <div>something went wrong </div>
-        ) : 
-
-           filteredData.length > 0?
-
-          (filteredData.map((e) => {
+        ) : filteredData && filteredData.length > 0 ? (
+          filteredData.map((e) => {
             return (
               <>
                 <Card item={e} key={e.id}>
@@ -89,23 +84,19 @@ const Products = () => {
                 </Card>
               </>
             );
-          }) 
-          
-        ):
-        (data.map((e) => {
-          return (
-            <>
-              <Card item={e} key={e.id}>
-                <Example item={e} key={e.id} />
-                <InfoAlert item={e} key={e.id} variant={"success"} />
-              </Card>
-            </>
-          );
-        }) 
-        
-      )
-      
-      }
+          })
+        ) : (
+          data.map((e) => {
+            return (
+              <>
+                <Card item={e} key={e.id}>
+                  <Example item={e} key={e.id} />
+                  <InfoAlert item={e} key={e.id} variant={"success"} />
+                </Card>
+              </>
+            );
+          })
+        )}
       </div>
       <Footer />
     </div>
