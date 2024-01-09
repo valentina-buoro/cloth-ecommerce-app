@@ -46,7 +46,7 @@ const Products = () => {
   const [buttonColor, setButtonColor] = useState('');
   const [buttonText, setButtonText]=useState('')*/
   return (
-    <div className=" bg-[#f2f7f8] w-[80%] flex flex-1 flex-col min-h-screen">
+    <div className="bg-gradient-to-r from-[#810551] via-black to-[#810551] w-[80%] flex flex-1 flex-col min-h-screen">
       {/* <div className="flex gap-5 px-5 mt-4">
         <button  style={{ backgroundColor: buttonColor, color:buttonText }} onClick={() => handleFilter("all")} value='all' className={`px-4 py-2 rounded-3xl border border-black active:bg-black`}>All</button>
         <button onClick={() => handleFilter("women's clothing")}  value="women's clothing" className="px-4 py-2 rounded-3xl border border-black">Women's clothing</button>

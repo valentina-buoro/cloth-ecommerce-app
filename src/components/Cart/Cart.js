@@ -23,8 +23,8 @@ const Cart = () => {
       </div>
     );
   return (
-    <div className="bg-neutral-100">
-      <div className="bg-neutral-100">
+    <div className="bg-gradient-to-r from-[#810551] via-black to-[#810551]">
+      <div className="bg-gradient-to-r from-[#810551] via-black to-[#810551]">
         <h5>
           {" "}
           Cart ({totalUniqueItems}) total items: ({totalItems})

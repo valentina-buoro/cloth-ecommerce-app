@@ -12,13 +12,15 @@ const text = [
   "Dress for success.",
 ];
 const colors = [
-  "(to right, #8E24AA, #1E88E5)",
+  
+  "(to right, #603813, #b29f94)"
+  /*"(to right, #8E24AA, #1E88E5)",
   "(to right, purple, red)",
   "(to right, #aa076b, #61045f)",
   "(to right, #603813, #b29f94)",
   "(to right, #2C3E50,#FD746C)",
   "(to right, #e65c00 ,#F9D423)",
-  "(to right, #603813, #b29f94)",
+  "(to right, #603813, #b29f94)",*/
  
   
 ];
@@ -37,14 +39,15 @@ const Header = () => {
 
   return (
     <>
-      <Navbar />
+    
 
       <div
         style={{
           background: `linear-gradient${colors[value]}`,
           marginLeft: "24px",
           marginRight: "24px",
-          borderRadius: "12px"
+          borderRadius: "12px",
+          marginTop: "24px",
         }}
       >
         <CarouselFadeExample text={text[value]} />

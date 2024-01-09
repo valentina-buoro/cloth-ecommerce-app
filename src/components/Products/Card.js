@@ -38,7 +38,7 @@ const Card = (props) => {
       <div className="">
       <p className="font-semibold align-middle text-lg pb-1 md:pb-2">N {props.item.price}</p>
       </div>
-        <div><button onClick={AddItem} className="px-3 py-2 bg-[#07775D] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]">Add to cart</button></div>
+        <div><button onClick={AddItem} className="px-3 py-2 bg-[#43766C] text-white rounded-[0.625rem] text-[0.75rem] md:text-[1rem]">Add to cart</button></div>
       </div>
       <div className="text-normal text-sm text-gray-500 pt-2 md:pt-4 " onClick={handleShowMessage}>
         <NavLink className='text-gray-500'>Product Details</NavLink>
