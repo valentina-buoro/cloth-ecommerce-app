@@ -1,6 +1,8 @@
 import React from "react";
-import Navbar from "./Navbar";
+//import Navbar from "./Navbar";
 import CarouselFadeExample from "./Banner";
+import { BsCart2 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const text = [
   "Fashion is an art form",
@@ -12,17 +14,14 @@ const text = [
   "Dress for success.",
 ];
 const colors = [
-  
-  "(to right, #603813, #b29f94)"
-  /*"(to right, #8E24AA, #1E88E5)",
+  "(to right, #603813, #b29f94)",
+  "(to right, #8E24AA, #1E88E5)",
   "(to right, purple, red)",
   "(to right, #aa076b, #61045f)",
   "(to right, #603813, #b29f94)",
   "(to right, #2C3E50,#FD746C)",
   "(to right, #e65c00 ,#F9D423)",
-  "(to right, #603813, #b29f94)",*/
- 
-  
+  "(to right, #603813, #b29f94)",
 ];
 
 const Header = () => {
@@ -39,8 +38,6 @@ const Header = () => {
 
   return (
     <>
-    
-
       <div
         style={{
           background: `linear-gradient${colors[value]}`,
@@ -50,6 +47,11 @@ const Header = () => {
           marginTop: "24px",
         }}
       >
+        <div className="flex flex-row-reverse items-end m-1 md:m-4 text-end">
+          <Link to="/checkout">
+            <BsCart2  className="text-black w-5 md:w-7 h-7 m-1 md:m-2" />
+          </Link>
+        </div>
         <CarouselFadeExample text={text[value]} />
       </div>
     </>
