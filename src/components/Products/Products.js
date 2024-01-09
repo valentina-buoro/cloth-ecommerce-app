@@ -59,7 +59,7 @@ const Products = () => {
       <div className="px-6 md:px-12 py-4 md:py-8 flex items-center justify-center">
         <input
           type="search"
-          className="border outline-none rounded-xl md:rounded-3xl p-2  md:p-3 w-full md:w-1/2"
+          className="border outline-none rounded-xl md:rounded-3xl p-3 w-full md:w-1/2"
           placeholder="Search for products"
           onChange={(e) => {
             const filteredData = data.filter((item) =>
