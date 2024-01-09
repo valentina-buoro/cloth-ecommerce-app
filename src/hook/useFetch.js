@@ -6,43 +6,7 @@ const useFetch = (endpoint, query) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  /*const options = {
-    method: "GET",
-    url: `https://jsearch.p.rapidapi.com/${endpoint}`,
-    headers: {
-      'X-RapidAPI-Key': '836fe20de9mshb23d004e363fc78p1a36cdjsnc9164e16ced5',
-      'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-    },
-    params: { ...query }
-  };
-
-  const options = {
-    method: 'GET',
-    url: `https://amazon23.p.rapidapi.com/${endpoint}`,
-    
-    headers: {
-      'X-RapidAPI-Key': '836fe20de9mshb23d004e363fc78p1a36cdjsnc9164e16ced5',
-      'X-RapidAPI-Host': 'amazon23.p.rapidapi.com'
-    }, params:{...query}
-  };
-
-
-
-  const fetchData = async () => {
-    setIsLoading(true);
-    
-    try {
-      const response = await axios.request(options);
-      setData(response.data.data);
-      setIsLoading(false);
-    } catch (error) {
-      setError(error);
-      alert("There is an error" + error);
-    } finally {
-      setIsLoading(false);
-    }
-  };*/
-
+  
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getData = async () => {

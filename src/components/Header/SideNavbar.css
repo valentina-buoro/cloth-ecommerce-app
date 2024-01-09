@@ -5,7 +5,9 @@
     flex-direction: column;
     max-height: 100vh;
     color: white;
-    background: linear-gradient(10deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
+    background-color: #0c1825;
+    /*background: '#122231';*/
+   
     padding: 5px 10px;
     overflow: hidden;
   }
