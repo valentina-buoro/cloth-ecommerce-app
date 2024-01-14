@@ -9,42 +9,17 @@ import InfoAlert from "../Alert";
 
 const Products = () => {
   const { data, isLoading, error } = useFetch("products");
-  const [filteredData, setFilteredData] = React.useState(data);
+  // const [filteredData, setFilteredData] = React.useState(data);
+  const [search, setSearch] = React.useState("");
 
-  /*const [data, setData] = useState([]);
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        setData(response.data);
-        console.log(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getData();
-  },[data]);
- //
-
-  // const filteredData = data.filter(
-  //   (item) =>
-  //     item.category.toLowerCase().includes(filterParam)
-    
-  // );
-  
-  const [filteredData, setFilteredData] = useState(data);
-  const handleFilter = (category) => {
-    
-      const filtered = data.filter((item) => item.category === category);
-     setFilteredData(filtered);
-  
-    const newColor = buttonColor === '' ? 'black' : '';
-    setButtonColor(newColor);
-    const newTextColor = buttonColor === '' ? 'white' : '';
-    setButtonText(newTextColor);
+  const onSearchChange = (e) => {
+    setSearch(e.target.value);
   };
-  const [buttonColor, setButtonColor] = useState('');
-  const [buttonText, setButtonText]=useState('')*/
+
+  const filteredData = data.filter((item) =>
+    item.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="bg-gradient-to-r from-[#810551] via-black to-[#810551] w-[80%] flex flex-1 flex-col min-h-screen">
       {/* <div className="flex gap-5 px-5 mt-4">
@@ -61,12 +36,7 @@ const Products = () => {
           type="search"
           className="border outline-none rounded-xl md:rounded-3xl p-3 w-full md:w-1/2"
           placeholder="Search for products"
-          onChange={(e) => {
-            const filteredData = data.filter((item) =>
-              item.title.toLowerCase().includes(e.target.value.toLowerCase())
-            );
-            setFilteredData(filteredData);
-          }}
+          onChange={onSearchChange}
         />
       </div>
       <div class=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-12 p-6 md:p-12">
@@ -74,19 +44,8 @@ const Products = () => {
           <div> fetching your items !</div>
         ) : error ? (
           <div>something went wrong </div>
-        ) : filteredData && filteredData.length > 0 ? (
-          filteredData.map((e) => {
-            return (
-              <>
-                <Card item={e} key={e.id}>
-                  <Example item={e} key={e.id} />
-                  <InfoAlert item={e} key={e.id} variant={"success"} />
-                </Card>
-              </>
-            );
-          })
         ) : (
-          data.map((e) => {
+          filteredData.map((e) => {
             return (
               <>
                 <Card item={e} key={e.id}>
